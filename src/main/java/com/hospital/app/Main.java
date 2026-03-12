@@ -9,7 +9,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 
-public class HospitalApplication {
+public class Main {
 
     public static void main(String[] args) {
 
@@ -22,22 +22,22 @@ public class HospitalApplication {
         MedicalRecordDAO recordDAO = context.getBean(MedicalRecordDAO.class);
 
         Doctor doctor = new Doctor(
-                "John",
-                "Smith",
-                "Cardiology",
+                "Arsene",
+                "Hirwa",
+                "pediatry",
                 "078888111",
-                "john@hospital.com"
+                "arsen@hospital.com"
         );
 
         doctorDAO.saveDoctor(doctor);
 
         Patient patient = new Patient(
-                "Alice",
-                "Brown",
-                Date.valueOf("1995-04-10"),
+                "Ariane",
+                "fanny",
+                Date.valueOf("2005-04-10"),
                 "Female",
                 "078888222",
-                "alice@mail.com"
+                "arie@mail.com"
         );
 
         patientDAO.savePatient(patient);
@@ -59,8 +59,6 @@ public class HospitalApplication {
         );
 
         recordDAO.saveRecord(record);
-
-        System.out.println("Hospital Management System running successfully.");
 
         context.close();
     }
